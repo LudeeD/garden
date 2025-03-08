@@ -9,12 +9,9 @@ compile_sass = true
 generate_feeds = true
 feed_filenames = ["rss.xml"]
 
-taxonomies = [
-    { name = "contexts" },
-    { name = "tags" },
-]
+taxonomies = [{ name = "contexts" }, { name = "tags" }]
 
-# theme = "no-style-please"
+output_dir = "docs"
 
 [markdown]
 highlight_code = false
