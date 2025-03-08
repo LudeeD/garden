@@ -1,4 +1,14 @@
-# Going to Miami beach and hating every second of it
++++
+title = "Going to Miami beach and hating every second of it"
+date = 2024-01-01
+
+[extra]
+summary = "My adventures going to Miami to present a paper that I wrote for my master's thesis"
+
+[taxonomies]
+tags = ["Miami"]
+contexts = ["Personal Adventure"]
++++
 
 During my masters I had the opportunity of going to Miami beach. It was to present a paper I was working on about the future of vehicular networks and information dissemination on those networks. The conference I was attending was a 3 day event, and since I was flying across the globe I decided to stay 3 extra days and enjoy the city.
 
@@ -18,3 +28,4 @@ After boarding the train man ? quickly reached my spot to verify my ticket. Afte
 
 It was not.
 
+![Picture of a train station at night](/images/miami_departure.png)

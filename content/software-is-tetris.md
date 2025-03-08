@@ -1,4 +1,14 @@
-# Software is like Tetris
++++
+title = "Software is like Tetris"
+date = 2023-01-01
+
+[extra]
+summary = "Exploration of the similarities between software development and the game Tetris."
+
+[taxonomies]
+tags = ["software"]
+contexts = ["Essay"]
++++
 
 Software and Tetris have a lot in common. No, I am not saying that the best software was written in 1984 or by Russians. What I am saying is that playing Tetris feels a lot similar like building software.
 
@@ -20,4 +30,4 @@ There is always that guy who is better than you and can make lines faster than y
 
 You see? Tetris and software are basically the same concept.
 
-![tetris collapsing](https://media.giphy.com/media/5Tndtit6LsZmE/giphy.gif)
+![tetris collapsing](/images/falling_tetris.webp)

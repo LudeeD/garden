@@ -1,0 +1,35 @@
+# The URL the site will be built for
+base_url = "https://garden.luissilva.eu"
+title = "Luís's Garden"
+description = "Collection of thoughts, ideas and unfinished projects"
+author = "Luís Silva"
+
+compile_sass = true
+
+generate_feeds = true
+feed_filenames = ["rss.xml"]
+
+taxonomies = [
+    { name = "contexts" },
+    { name = "tags" },
+]
+
+# theme = "no-style-please"
+
+[markdown]
+highlight_code = false
+
+[extra]
+
+logo = "logo.png"
+header_nav = [
+    { name = "~home", url = "/" },
+    { name = "#tags", url = "/tags" },
+    { name = "@contexts", url = "/contexts" },
+]
+
+contexts_definitions = [
+    { name = "Project", description = "Sometimes I try to do cool things, they usually end up abandoned after a while, where is a list of said things" },
+    { name = "Essay", description = "Sometimes I opinions on stuff that I like to share, this is a list of said opinions" },
+    { name = "Personal Adventure", description = "Sometimes life happens and I want to record those memories" },
+]
