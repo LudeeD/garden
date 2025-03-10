@@ -7,7 +7,15 @@
       <generator>Zola</generator>
       <language>en</language>
       <atom:link href="https://garden.luissilva.eu/rss.xml" rel="self" type="application/rss+xml"/>
-      <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
+      <lastBuildDate>Sun, 09 Mar 2025 00:00:00 +0000</lastBuildDate>
+      <item>
+          <title>Water and Waste</title>
+          <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+          <author>Luís Silva</author>
+          <link>https://garden.luissilva.eu/water-and-waste/</link>
+          <guid>https://garden.luissilva.eu/water-and-waste/</guid>
+          <description xml:base="https://garden.luissilva.eu/water-and-waste/">water and waste management and how it all connects to software development</description>
+      </item>
       <item>
           <title>Splot</title>
           <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
