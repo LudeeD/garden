@@ -29,4 +29,5 @@ contexts_definitions = [
     { name = "Project", description = "Sometimes I try to do cool things, they usually end up abandoned after a while, where is a list of said things" },
     { name = "Essay", description = "Sometimes I opinions on stuff that I like to share, this is a list of said opinions" },
     { name = "Personal Adventure", description = "Sometimes life happens and I want to record those memories" },
+    { name = "Books", description = "Books I read and thought it would be cool to review" },
 ]
