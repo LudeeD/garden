@@ -6,9 +6,36 @@
 {% endblock header %}
 
 {% block content %}
-<p>
 {% for term in terms %}
-<a href="{{ term.permalink | safe }}">@{{ term.name }}</a>
+<section class="context-section">
+    <h2><a href="{{ term.permalink | safe }}">@{{ term.name }}</a></h2>
+
+    {% set taxonomy_def = config.extra.contexts_definitions | filter(attribute="name", value=term.name) | first %}
+    {% if taxonomy_def %}
+    <p class="context-description">{{ taxonomy_def.description }}</p>
+    {% endif %}
+
+    {% if term.pages %}
+    <ul class="post-list">
+        {% for page in term.pages | sort(attribute="date") | reverse %}
+        <li class="post-item">
+            <div class="post-header">
+                <a href="{{ page.permalink | safe }}" class="post-title-link">{{ page.title }}</a>
+                {% if page.date %}
+                <time class="post-date" datetime="{{ page.date }}">{{ page.date }}</time>
+                {% endif %}
+            </div>
+            {% if page.extra.summary %}
+            <p class="post-summary">{{ page.extra.summary }}</p>
+            {% elif page.description %}
+            <p class="post-summary">{{ page.description }}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p class="no-posts">No posts yet in this context.</p>
+    {% endif %}
+</section>
 {% endfor %}
-</p>
 {% endblock content %}

@@ -9,12 +9,22 @@
 {% else %}
 {% set pages = section.pages | sort(attribute="date") | reverse %}
 {% endif %}
-<ul>
+
+<h2>Recent Posts</h2>
+<ul class="post-list">
 {% for page in pages %}
-    <li>
-        <a href="{{ page.permalink | safe }}">{% if page.date and not config.extra.no_list_date %}{{ page.date }} - {% endif %}{{ page.title }}</a>
-        <br />
-        {{ page.description }}
+    <li class="post-item">
+        <div class="post-header">
+            <a href="{{ page.permalink | safe }}" class="post-title-link">{{ page.title }}</a>
+            {% if page.date and not config.extra.no_list_date %}
+            <time class="post-date" datetime="{{ page.date }}">{{ page.date }}</time>
+            {% endif %}
+        </div>
+        {% if page.extra.summary %}
+        <p class="post-summary">{{ page.extra.summary }}</p>
+        {% elif page.description %}
+        <p class="post-summary">{{ page.description }}</p>
+        {% endif %}
     </li>
 {% endfor %}
 </ul>

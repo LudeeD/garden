@@ -1,38 +1,48 @@
-{% extends "base.html" %} {% block header %}
+{% extends "base.html" %}
+
+{% block header %}
 <p><a href="{{ current_path }}..">..</a>/{{ term.slug }}/</p>
 <h1>{{ term.name }}</h1>
+{% endblock header %}
 
-{% endblock header %} {% block content %}
-
-
+{% block content %}
 {% set taxonomy_def = config.extra.contexts_definitions | filter(attribute="name", value=term.name) | first %}
 
 {% if taxonomy_def %}
-  <p>{{ taxonomy_def.description }}</p>
+<p class="context-description">{{ taxonomy_def.description }}</p>
 {% endif %}
 
+{% if paginator %}
+{% set pages = paginator.pages | sort(attribute="date") | reverse %}
+{% else %}
+{% set pages = term.pages | sort(attribute="date") | reverse %}
+{% endif %}
 
-{% if paginator %} {% set pages =
-paginator.pages %} {% else %} {% set pages = term.pages %} {% endif %}
-<ul>
+<ul class="post-list">
     {% for page in pages %}
-    <li>
-        <a href="{{ page.permalink | safe }}"
-            >{% if page.date %}{{ page.date }} - {% endif %}{{ page.title }}</a
-        >
-        <br />
-        {{ page.description }}
+    <li class="post-item">
+        <div class="post-header">
+            <a href="{{ page.permalink | safe }}" class="post-title-link">{{ page.title }}</a>
+            {% if page.date %}
+            <time class="post-date" datetime="{{ page.date }}">{{ page.date }}</time>
+            {% endif %}
+        </div>
+        {% if page.extra.summary %}
+        <p class="post-summary">{{ page.extra.summary }}</p>
+        {% elif page.description %}
+        <p class="post-summary">{{ page.description }}</p>
+        {% endif %}
     </li>
     {% endfor %}
 </ul>
+
 {% if paginator %}
 <p>
-    {% if paginator.previous %}<a href="{{ paginator.first }}"
-        >&lt;&lt; First</a
-    >
-    <a href="{{ paginator.previous }}">&lt; Previous</a>{% endif %} [{{
-    paginator.current_index }}/{{ paginator.number_pagers }}] {% if
-    paginator.next %}<a href="{{ paginator.next }}">Next &gt;</a>
+    {% if paginator.previous %}<a href="{{ paginator.first }}">&lt;&lt; First</a>
+    <a href="{{ paginator.previous }}">&lt; Previous</a>{% endif %}
+    [{{ paginator.current_index }}/{{ paginator.number_pagers }}]
+    {% if paginator.next %}<a href="{{ paginator.next }}">Next &gt;</a>
     <a href="{{ paginator.last }}">Last &gt;&gt;</a>{% endif %}
 </p>
-{% endif %} {% endblock content %}
+{% endif %}
+{% endblock content %}

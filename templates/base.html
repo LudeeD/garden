@@ -86,9 +86,9 @@
             }
         </script>
         {% endblock metatags %}
-        {% if config.generate_feed %}
+        {% if config.generate_feeds %}
         {% block feed %}
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="{{ get_url(path="atom.xml", trailing_slash=false) }}">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
         {% endblock feed %}
         {% endif %}
         {% block css %}
@@ -96,6 +96,14 @@
         {% endblock css %}
     </head>
     <body theme="auto">
+        <div id="cursor"></div>
+        <script>
+            const cursor = document.getElementById('cursor');
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        </script>
         <div class="w">
             <header>
                 {% if config.extra.header_nav %}
@@ -105,7 +113,11 @@
                     {% endfor %}
                 </nav>
                 {% endif %}
-                {% block header %}{% if title %}<h1>{{ config.title }}</h1>{% endif %}{% endblock header %}
+                {% block header %}
+                {% if title %}
+                <h1 class="site-title">{{ config.title }}</h1>
+                {% endif %}
+                {% endblock header %}
             </header>
             <main class="page-content" aria-label="Content">
                 {% block content %}{% endblock content %}

@@ -5,21 +5,43 @@
 // see: https://stackoverflow.com/a/61265706
 html,
 body {
-    background: #fafad2;
+    background: #f6f1e1;
 }
 
 html {
     height: 100%;
 }
 
+* {
+    cursor: none;
+}
+
 body {
-    color: black;
-    font-family: monospace;
-    font-size: 16px;
-    line-height: 1.4;
+    color: #000000;
+    font-family: system-ui, sans-serif;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 1.6;
     margin: 0;
     min-height: 100%;
     overflow-wrap: break-word;
+    cursor: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000000;
+    letter-spacing: 0.02em;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0;
 }
 
 .post-meta {
@@ -31,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 hr {
@@ -39,7 +61,7 @@ hr {
 }
 
 p {
-    margin: 1rem 0;
+    margin: 0.4rem 0;
 }
 
 li {
@@ -47,13 +69,13 @@ li {
 }
 
 *:target {
-    background: yellow;
+    background: #d8caa0;
 }
 
 .w {
     max-width: 640px;
     margin: 0 auto;
-    padding: 4rem 2rem;
+    padding: 2rem;
 }
 
 hr {
@@ -75,14 +97,14 @@ table {
 table,
 th,
 td {
-    border: thin solid black;
+    border: thin solid #4a4134;
     border-collapse: collapse;
     padding: 0.4rem;
 }
 
 code {
-    color: white;
-    background: black;
+    color: #f7f3e7;
+    background: #3a3228;
 }
 
 pre code {
@@ -94,7 +116,7 @@ pre code {
 
 blockquote {
     font-style: italic;
-    border: thin solid black;
+    border: thin solid #4a4134;
     padding: 1rem;
 
     p {
@@ -111,8 +133,8 @@ img {
 .footnote-definition {
     padding: 0 1rem;
     &:target {
-        background: yellow;
-        color: #212121;
+        background: #d8caa0;
+        color: #2f2a1f;
     }
     p {
         display: inline;
@@ -126,27 +148,107 @@ nav,
 
 a,
 a:visited {
-    color: #8b4513; /* SaddleBrown */
+    color: #445539; /* muted evergreen */
     text-decoration: underline; /* always underlined */
-
-    /* Initially no border, to avoid shifting content on hover */
-    border: 2px solid transparent;
-    padding: 2px; /* small space inside the border */
-
-    /* For modern browsers that support it, you can still do:
-  */
 
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
+    padding: 2px 4px;
+
+    transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+    display: inline-block;
+}
+
+#cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
 }
 
 a:hover {
-    /* Disappear the cursor and show a border */
-    border-color: #5b3310; /* darker brown border */
-    text-decoration: none; /* always underlined */
+    background: #2f3c28;
+    color: #f6f1e1;
+    text-decoration: none;
+    transform: scale(1.05);
 }
 
 a:active {
-    color: #5b3310; /* slightly darker text on click */
-    border-color: #5b3310; /* keep the border color on click */
+    transform: scale(0.98);
+}
+
+/* Post list styling */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.post-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d8caa0;
+}
+
+.post-item:last-child {
+    border-bottom: none;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+    flex-wrap: wrap;
+}
+
+.post-title-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex: 1;
+}
+
+.post-date {
+    color: #6b6153;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.post-summary {
+    margin: 0.25rem 0 0 0;
+    color: #4a4134;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+/* Context sections */
+.context-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #d8caa0;
+}
+
+.context-section h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.context-description {
+    color: #6b6153;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.no-posts {
+    color: #6b6153;
+    font-style: italic;
+    font-size: 0.9rem;
 }
