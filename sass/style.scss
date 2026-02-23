@@ -5,7 +5,7 @@
 // see: https://stackoverflow.com/a/61265706
 html,
 body {
-    background: #f6f1e1;
+    background: #f4ebb0;
 }
 
 html {
@@ -97,7 +97,7 @@ table {
 table,
 th,
 td {
-    border: thin solid #4a4134;
+    border: thin solid #2a2318;
     border-collapse: collapse;
     padding: 0.4rem;
 }
@@ -116,7 +116,7 @@ pre code {
 
 blockquote {
     font-style: italic;
-    border: thin solid #4a4134;
+    border: thin solid #2a2318;
     padding: 1rem;
 
     p {
@@ -215,14 +215,14 @@ a:active {
 }
 
 .post-date {
-    color: #6b6153;
+    color: #3d3028;
     font-size: 0.85rem;
     white-space: nowrap;
 }
 
 .post-summary {
     margin: 0.25rem 0 0 0;
-    color: #4a4134;
+    color: #2a2318;
     line-height: 1.4;
     font-size: 0.95rem;
 }
@@ -242,13 +242,62 @@ a:active {
 }
 
 .context-description {
-    color: #6b6153;
+    color: #3d3028;
     margin: 0 0 1rem 0;
     font-size: 0.9rem;
 }
 
 .no-posts {
-    color: #6b6153;
+    color: #3d3028;
     font-style: italic;
     font-size: 0.9rem;
+}
+
+/* Seed + flower interaction */
+.garden-seed {
+    position: fixed;
+    width: 7px;
+    height: 9px;
+    background: #2a2318;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    pointer-events: none;
+    z-index: 9990;
+    transform: translate(-50%, -50%);
+}
+
+.garden-flower {
+    position: fixed;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 9990;
+    transform: translateX(-50%);
+
+    .f-stem {
+        stroke-dasharray: 35;
+        stroke-dashoffset: 35;
+        animation: stem-grow 0.45s ease-out forwards;
+    }
+
+    .f-leaf {
+        animation: leaf-appear 0.3s 0.4s ease forwards;
+    }
+
+    .f-bloom {
+        transform-origin: 0px -37px;
+        transform: scale(0);
+        opacity: 0;
+        animation: bloom-pop 0.35s 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+}
+
+@keyframes stem-grow {
+    to { stroke-dashoffset: 0; }
+}
+
+@keyframes leaf-appear {
+    to { opacity: 1; }
+}
+
+@keyframes bloom-pop {
+    to { transform: scale(1); opacity: 1; }
 }

@@ -133,6 +133,57 @@
                 {% endif %}
             </footer>
         </div>
+        <script>
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('a')) return;
+                dropSeed(e.clientX, e.clientY);
+            });
+
+            function dropSeed(x, y) {
+                const seed = document.createElement('div');
+                seed.className = 'garden-seed';
+                seed.style.left = x + 'px';
+                seed.style.top = y + 'px';
+                document.body.appendChild(seed);
+
+                const targetY = window.innerHeight - 35;
+                const duration = 500 + Math.random() * 400;
+
+                seed.animate(
+                    [{ top: y + 'px' }, { top: targetY + 'px' }],
+                    { duration, easing: 'cubic-bezier(0.33, 0, 0.66, 1)', fill: 'forwards' }
+                ).onfinish = () => {
+                    seed.remove();
+                    bloomFlower(x);
+                };
+            }
+
+            function bloomFlower(x) {
+                const colors = ['#e8a0b0', '#d4b8d8', '#f0c080', '#a8c8a8', '#b8d4f0'];
+                const c = colors[Math.floor(Math.random() * colors.length)];
+                const el = document.createElement('div');
+                el.className = 'garden-flower';
+                el.style.left = x + 'px';
+                el.innerHTML = `<svg viewBox="-25 -65 50 70" width="50" height="70" xmlns="http://www.w3.org/2000/svg">
+                    <line class="f-stem" x1="0" y1="4" x2="0" y2="-28" stroke="#445539" stroke-width="2.5" stroke-linecap="round"/>
+                    <ellipse class="f-leaf" cx="-10" cy="-14" rx="9" ry="4" fill="#4a6640" transform="rotate(-40,-10,-14)" opacity="0"/>
+                    <g class="f-bloom">
+                        <circle cx="0" cy="-44" r="7" fill="${c}"/>
+                        <circle cx="0" cy="-30" r="7" fill="${c}"/>
+                        <circle cx="-12" cy="-37" r="7" fill="${c}"/>
+                        <circle cx="12" cy="-37" r="7" fill="${c}"/>
+                        <circle cx="0" cy="-37" r="6" fill="#f0c060"/>
+                    </g>
+                </svg>`;
+                document.body.appendChild(el);
+
+                setTimeout(() => {
+                    el.style.transition = 'opacity 1.5s ease';
+                    el.style.opacity = '0';
+                    setTimeout(() => el.remove(), 1500);
+                }, 7000);
+            }
+        </script>
     </body>
 </html>
         
