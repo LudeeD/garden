@@ -1,6 +1,6 @@
 +++
 title = "Addiction"
-date = 2025-03-09
+date = 2026-03-22
 
 [extra]
 summary = "Are LLMs really good, or are we just addicted?"
