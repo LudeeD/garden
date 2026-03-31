@@ -3,6 +3,7 @@ title = "Splot"
 date = 2024-02-01
 
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3miezzyrdhn2y"
 summary = "I've built Splot, a svelte kit app powered by pocketbase, to manage my and my girlfriend's expenses and payments."
 
 [taxonomies]

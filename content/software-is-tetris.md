@@ -3,6 +3,7 @@ title = "Software is like Tetris"
 date = 2023-01-01
 
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3miezzxlgia2g"
 summary = "Exploration of the similarities between software development and the game Tetris."
 
 [taxonomies]

@@ -3,6 +3,7 @@ title = "Water and Waste"
 date = 2025-03-09
 
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3miezzvkmfn2t"
 summary = "water and waste management and how it all connects to software development"
 
 [taxonomies]

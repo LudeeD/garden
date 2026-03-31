@@ -3,6 +3,7 @@ title = "Going to Miami beach and hating every second of it"
 date = 2024-01-01
 
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3miezzwmclc2s"
 summary = "My adventures going to Miami to present a paper that I wrote for my master's thesis"
 
 [taxonomies]

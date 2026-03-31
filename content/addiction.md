@@ -3,6 +3,7 @@ title = "Addiction"
 date = 2026-03-22
 
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3mif2237n4w2w"
 summary = "Are LLMs really good, or are we just addicted?"
 
 [taxonomies]

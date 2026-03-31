@@ -2,6 +2,7 @@
 title = "The Word for World is Forest"
 date = 2025-07-05
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3miezzzwxob2t"
 summary = "Review of The Word for World is Forest, a book by Ursula K. Le Guin"
 [taxonomies]
 contexts = ["Books"]

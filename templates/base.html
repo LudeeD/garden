@@ -70,6 +70,7 @@
         {% endif %}
         
         <link rel="canonical" href="{{ url | safe }}">
+        {% if page.extra.atproto_uri %}<link rel="site.standard.document" href="{{ page.extra.atproto_uri }}">{% endif %}
         {% if image %}<link rel="shortcut icon" type="image/x-icon" href="{{ get_url(path=config.extra.logo, trailing_slash=false) }}">{% endif %}
         <script type="application/ld+json">
             {
