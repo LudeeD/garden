@@ -2,6 +2,7 @@
 title = "Roadside Picnic"
 date = 2026-03-31
 [extra]
+atproto_uri = "at://did:plc:xz7cghm6nkufwscryfzfjcsh/site.standard.document/3mif45ojtpt2r"
 summary = "Review of Roadside Picnic, a book by Arkady and Boris Strugatsky"
 [taxonomies]
 contexts = ["Books"]
