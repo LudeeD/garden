@@ -23,7 +23,7 @@ This foul odor came from overly poluted River Thames. And yes, this is the same 
 
 Imagine...
 
-![A 19th century woman drops her tea-cup in horror upon viewing a magnified drop of polluted Thames water, which was a prime source of water-borne diseases such as cholera and typhoid. William Heath , Public domain, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Monster_Soup_commonly_called_Thames_Water._Wellcome_V0011218.jpg/640px-Monster_Soup_commonly_called_Thames_Water._Wellcome_V0011218.jpg)
+![A 19th century woman drops her tea-cup in horror upon viewing a magnified drop of polluted Thames water, which was a prime source of water-borne diseases such as cholera and typhoid. William Heath , Public domain, via Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/0/03/Monster_Soup_commonly_called_Thames_Water._Wellcome_V0011218.jpg)
 
 
 Nowadays, we don't need to worry about getting clean water or disposing of waste.
@@ -92,7 +92,7 @@ He genuinely cared, a lot.
 By mapping all the cases of the outbreak he pinpointed this single pump as the focus of the infection.
 His essay, _Mode of communication Cholera_[^1], is an astonishing work, and stragely easy to read (at least for what I was expecting from an 19th century essay from a doctor).
 
-![Original map by John Snow showing the clusters of cholera cases in the London epidemic of 1854, drawn and lithographed by Charles Cheffins.](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Snow-cholera-map-1.jpg/819px-Snow-cholera-map-1.jpg)
+![Original map by John Snow showing the clusters of cholera cases in the London epidemic of 1854, drawn and lithographed by Charles Cheffins.](https://upload.wikimedia.org/wikipedia/commons/2/27/Snow-cholera-map-1.jpg)
 
 So, what does this all mean?
 What did we learn from all this?
